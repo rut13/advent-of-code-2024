@@ -1,0 +1,42 @@
+# Advent of Code 2024
+
+## How to Run This Project
+
+### Prerequisites
+- Ensure you have Rust installed on your machine. You can install it from [rust-lang.org](https://www.rust-lang.org/).
+- Install the required dependencies by running:
+    ```
+    cargo build
+    ```
+
+### Running the Project
+1. Clone the repository to your local machine:
+    ```
+    git clone https://github.com/yourusername/advent-of-code-2024.git
+    ```
+2. Navigate to the project directory:
+    ```
+    cd advent-of-code-2024
+    ```
+3. Run the desired day's solution:
+    ```
+    cargo run day partofday
+    ```
+    Replace `day` with the day number you want to run (e.g., `1` for Day 1) and `partofday` with the part of the day (either `1` or `2`). For example:
+    ```
+    cargo run 1 1
+    ```
+
+### Running Tests
+- To run the tests, use:
+    ```
+    cargo test
+    ```
+
+### Contributing
+- Fork the repository.
+- Create a new branch for your feature or bugfix.
+- Submit a pull request with a detailed description of your changes.
+
+### License
+This project is licensed under the MIT License.
