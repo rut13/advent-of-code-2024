@@ -29,7 +29,7 @@ fn main() {
     match day_arg {
         Some(day_arg) => match day_part_arg {
             Some(day_part_arg) => {
-                let input = get_input(&format!("./data/input-{day_arg}-{day_part_arg}.txt"));
+                let input = get_input(&format!("./data/input-{day_arg}.txt"));
                 let result = day_to_problem(day_arg.parse::<usize>().unwrap());
                 match result {
                     Some(problem) => match day_part_arg.parse::<usize>().unwrap() {

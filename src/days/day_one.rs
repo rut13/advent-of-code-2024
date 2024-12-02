@@ -29,6 +29,14 @@ impl Problem for DayOne {
     }
 
     fn part_two(&self, input: Vec<String>) -> String {
-        todo!()
+        let (left, right) = parse_and_sort(input);
+        let mut similarity_score = 0;
+        for i in 0..left.len() {
+            let current_left = left[i];
+            let count = right.iter().filter(|&curr| curr == &current_left).count();
+            similarity_score += current_left * count as i32;
+        }
+
+        similarity_score.to_string()
     }
 }
