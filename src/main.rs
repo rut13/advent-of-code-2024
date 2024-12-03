@@ -2,6 +2,7 @@ use std::env;
 use std::fs;
 
 use days::day_one::DayOne;
+use days::day_two::DayTwo;
 use structs::problem::Problem;
 
 pub mod days;
@@ -18,6 +19,7 @@ fn get_input(path: &str) -> Vec<String> {
 fn day_to_problem(day: usize) -> Option<Box<dyn Problem>> {
     match day {
         1 => Some(Box::new(DayOne {})),
+        2 => Some(Box::new(DayTwo {})),
         _ => None,
     }
 }
