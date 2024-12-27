@@ -1,4 +1,4 @@
-use crate::structs::problem::Problem;
+use crate::{structs::problem::Problem, utils::parse_input::input_to_vec};
 
 pub struct DayOne {}
 
@@ -18,8 +18,9 @@ fn parse_and_sort(input: Vec<String>) -> (Vec<i32>, Vec<i32>) {
 }
 
 impl Problem for DayOne {
-    fn part_one(&self, input: Vec<String>) -> String {
-        let (left, right) = parse_and_sort(input);
+    fn part_one(&self, input: String) -> String {
+        let parsed_input = input_to_vec(input);
+        let (left, right) = parse_and_sort(parsed_input);
         let mut sum = 0;
         for i in 0..left.len() {
             let diff = right[i] - left[i];
@@ -28,8 +29,9 @@ impl Problem for DayOne {
         sum.to_string()
     }
 
-    fn part_two(&self, input: Vec<String>) -> String {
-        let (left, right) = parse_and_sort(input);
+    fn part_two(&self, input: String) -> String {
+        let parsed_input = input_to_vec(input);
+        let (left, right) = parse_and_sort(parsed_input);
         let mut similarity_score = 0;
         for i in 0..left.len() {
             let current_left = left[i];

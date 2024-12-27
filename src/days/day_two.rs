@@ -1,4 +1,4 @@
-use crate::structs::problem::Problem;
+use crate::{structs::problem::Problem, utils::parse_input::input_to_vec};
 
 pub struct DayTwo {}
 
@@ -24,9 +24,10 @@ fn is_safe(report: &[i32]) -> bool {
 }
 
 impl Problem for DayTwo {
-    fn part_one(&self, input: Vec<String>) -> String {
+    fn part_one(&self, input: String) -> String {
+        let parsed_input = input_to_vec(input);
         let mut result = 0;
-        for line in input {
+        for line in parsed_input {
             let levels: Vec<i32> = line
                 .split_whitespace()
                 .map(|s| s.parse::<i32>().unwrap())
@@ -38,10 +39,11 @@ impl Problem for DayTwo {
         result.to_string()
     }
 
-    fn part_two(&self, input: Vec<String>) -> String {
+    fn part_two(&self, input: String) -> String {
+        let parsed_input = input_to_vec(input);
         let mut result = 0;
 
-        for line in input {
+        for line in parsed_input {
             let levels: Vec<i32> = line
                 .split_whitespace()
                 .map(|s| s.parse::<i32>().unwrap())

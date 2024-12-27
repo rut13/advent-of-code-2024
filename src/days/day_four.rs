@@ -1,4 +1,4 @@
-use crate::structs::problem::Problem;
+use crate::{structs::problem::Problem, utils::parse_input::input_to_vec};
 use std::convert::TryInto;
 
 pub struct DayFour {}
@@ -42,8 +42,9 @@ fn to_multid(input: &Vec<String>) -> Vec<Vec<char>> {
 }
 
 impl Problem for DayFour {
-    fn part_one(&self, input: Vec<String>) -> String {
-        let multi = to_multid(&input);
+    fn part_one(&self, input: String) -> String {
+        let parsed_input = input_to_vec(input);
+        let multi = to_multid(&parsed_input);
         let mut sum = 0;
         for row in 0..multi.len() {
             for column in 0..multi[row].len() {
@@ -67,7 +68,7 @@ impl Problem for DayFour {
         sum.to_string()
     }
 
-    fn part_two(&self, input: Vec<String>) -> String {
+    fn part_two(&self, _: String) -> String {
         todo!()
     }
 }
