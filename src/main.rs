@@ -3,6 +3,7 @@ use std::env;
 use days::day_five::DayFive;
 use days::day_four::DayFour;
 use days::day_one::DayOne;
+use days::day_six::DaySix;
 use days::day_three::DayThree;
 use days::day_two::DayTwo;
 use structs::problem::Problem;
@@ -20,6 +21,7 @@ fn day_to_problem(day: usize) -> Option<Box<dyn Problem>> {
         3 => Some(Box::new(DayThree {})),
         4 => Some(Box::new(DayFour {})),
         5 => Some(Box::new(DayFive {})),
+        6 => Some(Box::new(DaySix {})),
         _ => None,
     }
 }
